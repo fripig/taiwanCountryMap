@@ -94,16 +94,16 @@
                 .on('click', clickCountry)
                 .on('mouseover', showtip)
                 .attr("class", d => "country" + d.id)
-                .attr("d", path) //パスジェネレーターを使ってd属性の値を生成している
+                .attr("d", path) 
                 .attr("fill", levels[0].color)
                 .attr("fill-opacity", 0.5)
                 .attr("stroke", "#222");
         }
         projection = d3
-            .geoMercator() //投影法の指定
-            .scale(5000) //スケール（ズーム）の指定
-            .rotate([-0.25, 0.25, 0]) //地図を回転する　[x,y,z]
-            .center([121, 23]); //中心の座標を指定
+            .geoMercator() 
+            .scale(5000) 
+            .rotate([-0.25, 0.25, 0]) 
+            .center([121, 23]); 
         path = d3.geoPath().projection(projection);
         map = d3
             .select("#map")
@@ -111,7 +111,7 @@
             .attr("width", 600)
             .attr("height", 500);
         d3.json(
-            'data/TOWN_MOI_1070330.geojson',
+            'data/test.geojson',
             drawMaps
         );
 
